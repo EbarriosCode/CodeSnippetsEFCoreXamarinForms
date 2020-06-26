@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Xamarin-DbContext</Title>
+            <Author>Eduardo Barrios</Author>
+            <Description>Crea un Contexto de Datos Entity Framework Core para Xamarin Forms.</Description>
+            <Shortcut>dbcontext</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[
+                public class AppDbContext : DbContext
+                {
+                    string DbPath = string.Empty;
+
+                    public AppDbContext(string dbPath)
+                    {
+                        this.DbPath = dbPath;
+                    }     
+
+                    // TODO: Declarar los objetos del modelo
+
+                    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+                    {
+                        optionsBuilder.UseSqlite("Filename="+DbPath);
+                    }
+                }
+                ]]>
+            </Code>            
+          <Imports>
+            <Import>
+              <Namespace>Microsoft.EntityFrameworkCore</Namespace>              
+            </Import>
+          </Imports>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

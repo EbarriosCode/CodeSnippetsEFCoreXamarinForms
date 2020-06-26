@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Xamarin-ConfigDataBase</Title>
+            <Author>Eduardo Barrios</Author>
+            <Description>Crea el método GetFullPath para obtener la ruta de BD en iOS (Dependency Service).</Description>
+            <Shortcut>getfullpathios</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[                
+                public string GetFullPath(string databaseFileName)
+                {
+                    return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "..", "Library", databaseFileName);
+                }                        
+                ]]>
+            </Code> 
+            <Imports>
+                <Import>              
+                  <Namespace>System.IO</Namespace>
+                </Import>
+            </Imports>                     
+        </Snippet>        
+    </CodeSnippet>
+</CodeSnippets>
